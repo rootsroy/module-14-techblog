@@ -25,6 +25,7 @@ Comment.init(
         model: "post",
         key: "id",
       },
+      onDelete: "cascade",
     },
   },
   {
