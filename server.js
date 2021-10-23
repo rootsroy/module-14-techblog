@@ -1,12 +1,14 @@
 const express = require("express");
 const sequelize = require("./config/connection");
 const app = express();
-
+const cookieParser = require('cookie-parser')
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //  creates session
 const session = require("express-session");
+app.use(cookieParser('anykey')) //secrect key
+
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 require("dotenv").config();
 
